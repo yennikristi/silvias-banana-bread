@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Order - Silvia's Banana Bread & Brownies</title>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<section class="order-page">
+
+<div class="order-container">
+
+<h1>Place Your Order</h1>
+
+<p>
+Complete the form below, generate payment, make payment via
+Bank Transfer or QRIS, then submit your order through WhatsApp.
+</p>
+
+<form id="orderForm">
+
+<h2>Customer Information</h2>
+
+<div class="form-group">
+<label>Full Name</label>
+<input type="text" id="nama" required>
+</div>
+
+<div class="form-group">
+<label>Phone Number</label>
+<input type="text" id="hp" required>
+</div>
+
+<div class="form-group">
+<label>Delivery Address</label>
+<textarea id="alamat" rows="4" required></textarea>
+</div>
+
+<hr>
+
+<h2>Select Products</h2>
+
+<div class="product-order">
+
+  <div class="product-info">
+    <label>Banana Bread Original</label>
+    <span>Rp65.000</span>
+  </div>
+
+  <div class="qty-box">
+
+    <button
+      type="button"
+      onclick="changeQty('qty-banana',-1)">
+      −
+    </button>
+
+    <input
+      type="text"
+      id="qty-banana"
+      value="0"
+      readonly>
+
+    <button
+      type="button"
+      onclick="changeQty('qty-banana',1)">
+      +
+    </button>
+
+  </div>
+
+</div>
+
+
+<div class="product-order">
+
+  <div class="product-info">
+    <label>Chocolate Banana Bread</label>
+    <span>Rp75.000</span>
+  </div>
+
+  <div class="qty-box">
+
+    <button
+      type="button"
+      onclick="changeQty('qty-choco',-1)">
+      −
+    </button>
+
+    <input
+      type="text"
+      id="qty-choco"
+      value="0"
+      readonly>
+
+    <button
+      type="button"
+      onclick="changeQty('qty-choco',1)">
+      +
+    </button>
+
+  </div>
+
+</div>
+
+
+<div class="product-order">
+
+  <div class="product-info">
+    <label>Chocolate Brownies</label>
+    <span>Rp55.000</span>
+  </div>
+
+  <div class="qty-box">
+
+    <button
+      type="button"
+      onclick="changeQty('qty-brownies',-1)">
+      −
+    </button>
+
+    <input
+      type="text"
+      id="qty-brownies"
+      value="0"
+      readonly>
+
+    <button
+      type="button"
+      onclick="changeQty('qty-brownies',1)">
+      +
+    </button>
+
+  </div>
+
+</div>
+
+
+<div class="product-order">
+
+  <div class="product-info">
+    <label>Brownies Gift Box</label>
+    <span>Rp125.000</span>
+  </div>
+
+  <div class="qty-box">
+
+    <button
+      type="button"
+      onclick="changeQty('qty-giftbox',-1)">
+      −
+    </button>
+
+    <input
+      type="text"
+      id="qty-giftbox"
+      value="0"
+      readonly>
+
+    <button
+      type="button"
+      onclick="changeQty('qty-giftbox',1)">
+      +
+    </button>
+
+  </div>
+
+</div>
+
+
+<div class="total-box">
+
+  <h3>Total Payment</h3>
+
+  <p id="totalHarga">
+    Rp 0
+  </p>
+
+
+</div>
+
+<hr>
+
+<div class="button-group">
+
+<button
+type="button"
+id="generatePayment">
+
+Generate Payment
+
+</button>
+
+</div>
+
+<div
+id="paymentArea"
+style="display:none;">
+
+<hr>
+
+<h2>Payment Method</h2>
+
+<div class="payment-methods">
+
+<label class="payment-option">
+
+<input
+type="radio"
+name="payment"
+value="Bank Transfer"
+checked>
+
+<div class="payment-card">
+
+<h4>🏦 Bank Transfer</h4>
+
+<p>BCA Transfer</p>
+
+</div>
+
+</label>
+
+<label class="payment-option">
+
+<input
+type="radio"
+name="payment"
+value="QRIS">
+
+<div class="payment-card">
+
+<h4>📱 QRIS</h4>
+
+<p>All E-Wallet & Mobile Banking</p>
+
+</div>
+
+</label>
+
+</div>
+
+<div class="payment-box">
+
+<h3>Payment Information</h3>
+
+<p><strong>Bank BCA</strong></p>
+<p>1234567890</p>
+<p>a.n Silvia</p>
+
+<br>
+
+<p><strong>Transfer Steps</strong></p>
+
+<ol>
+<li>Open your Mobile Banking / ATM</li>
+<li>Select Transfer</li>
+<li>Transfer to BCA 1234567890</li>
+<li>Enter the exact payment amount</li>
+<li>Complete the transaction</li>
+</ol>
+
+<br>
+
+<p><strong>QRIS Steps</strong></p>
+
+<ol>
+<li>Open your E-Wallet / Mobile Banking</li>
+<li>Select Scan QRIS</li>
+<li>Scan the QR Code below</li>
+<li>Pay the exact amount</li>
+<li>Save payment proof</li>
+</ol>
+
+<img
+src="qris.png"
+alt="QRIS"
+class="qris-image">
+
+</div>
+
+<div class="countdown-box">
+
+<h3>Complete Payment Within</h3>
+
+<p id="countdown">
+60:00
+</p>
+
+</div>
+
+<div class="payment-confirmation">
+
+<label>
+
+<input
+type="checkbox"
+id="paidConfirm">
+
+I have completed the payment
+
+</label>
+
+</div>
+
+<div
+class="button-group"
+id="waSection"
+style="display:none;">
+
+<button
+type="submit"
+id="submitBtn">
+
+Send Order via WhatsApp
+
+</button>
+
+</div>
+
+</div>
+
+</form>
+
+</div>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
