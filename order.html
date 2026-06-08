@@ -16,11 +16,14 @@
 
 <div class="order-container">
 
+  <a href="index.html" class="back-home">
+← Back to Home
+</a>
+
 <h1>Place Your Order</h1>
 
 <p>
-Complete the form below, generate payment, make payment via
-Bank Transfer or QRIS, then submit your order through WhatsApp.
+Complete the form below, select your products, and send your order directly through WhatsApp. Payment and delivery details will be discussed directly with our team.
 </p>
 
 <form id="orderForm">
@@ -176,143 +179,20 @@ Bank Transfer or QRIS, then submit your order through WhatsApp.
 
 <div class="total-box">
 
-  <h3>Total Payment</h3>
+  <h3>Total Order</h3>
 
   <p id="totalHarga">
     Rp 0
   </p>
 
-
 </div>
+  <hr>
 
-<hr>
-
-<div class="button-group">
-
-<button
-type="button"
-id="generatePayment">
-
-Generate Payment
-
-</button>
-
-</div>
-
-<div
-id="paymentArea"
-style="display:none;">
-
-<hr>
-
-<h2>Payment Method</h2>
-
-<div class="payment-methods">
-
-<label class="payment-option">
-
-<input
-type="radio"
-name="payment"
-value="Bank Transfer"
-checked>
-
-<div class="payment-card">
-
-<h4>🏦 Bank Transfer</h4>
-
-<p>BCA Transfer</p>
-
-</div>
-
-</label>
-
-<label class="payment-option">
-
-<input
-type="radio"
-name="payment"
-value="QRIS">
-
-<div class="payment-card">
-
-<h4>📱 QRIS</h4>
-
-<p>All E-Wallet & Mobile Banking</p>
-
-</div>
-
-</label>
-
-</div>
-
-<div class="payment-box">
-
-<h3>Payment Information</h3>
-
-<p><strong>Bank BCA</strong></p>
-<p>1234567890</p>
-<p>a.n Silvia</p>
-
-<br>
-
-<p><strong>Transfer Steps</strong></p>
-
-<ol>
-<li>Open your Mobile Banking / ATM</li>
-<li>Select Transfer</li>
-<li>Transfer to BCA 1234567890</li>
-<li>Enter the exact payment amount</li>
-<li>Complete the transaction</li>
-</ol>
-
-<br>
-
-<p><strong>QRIS Steps</strong></p>
-
-<ol>
-<li>Open your E-Wallet / Mobile Banking</li>
-<li>Select Scan QRIS</li>
-<li>Scan the QR Code below</li>
-<li>Pay the exact amount</li>
-<li>Save payment proof</li>
-</ol>
-
-<img
-src="qris.png"
-alt="QRIS"
-class="qris-image">
-
-</div>
-
-<div class="countdown-box">
-
-<h3>Complete Payment Within</h3>
-
-<p id="countdown">
-60:00
+  <p class="order-note">
+After submitting your order, our team will contact you via WhatsApp to confirm payment and delivery details.
 </p>
-
-</div>
-
-<div class="payment-confirmation">
-
-<label>
-
-<input
-type="checkbox"
-id="paidConfirm">
-
-I have completed the payment
-
-</label>
-
-</div>
-
-<div
-class="button-group"
-id="waSection"
-style="display:none;">
+  
+<div class="button-group">
 
 <button
 type="submit"
@@ -321,8 +201,6 @@ id="submitBtn">
 Send Order via WhatsApp
 
 </button>
-
-</div>
 
 </div>
 
