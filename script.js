@@ -109,120 +109,6 @@ if(document.getElementById("totalHarga")){
 }
 
 // ==========================
-// GENERATE PAYMENT
-// ==========================
-
-const generatePayment =
-  document.getElementById("generatePayment");
-
-const paymentArea =
-  document.getElementById("paymentArea");
-
-const paidConfirm =
-  document.getElementById("paidConfirm");
-
-const waSection =
-  document.getElementById("waSection");
-
-let timerStarted = false;
-
-if (generatePayment) {
-
-  generatePayment.addEventListener("click", () => {
-
-    const total = hitungTotal();
-
-    if (total <= 0) {
-      alert("Please select at least one product.");
-      return;
-    }
-
-    if(paymentArea){
-  paymentArea.style.display = "block";
-}
-
-    if(paymentArea){
-  paymentArea.scrollIntoView({
-    behavior: "smooth"
-  });
-}
-
-    if (timerStarted) return;
-
-    timerStarted = true;
-
-    let waktu = 60 * 60;
-
-    const countdown =
-      document.getElementById("countdown");
-
-    const interval = setInterval(() => {
-
-      let menit =
-        Math.floor(waktu / 60);
-
-      let detik =
-        waktu % 60;
-
-      if(countdown){
-
-  countdown.innerHTML =
-  `${String(menit).padStart(2,"0")}:${String(detik).padStart(2,"0")}`;
-
-}
-
-      waktu--;
-
-      if (waktu < 0) {
-
-  clearInterval(interval);
-
-  if(countdown){
-    countdown.innerHTML = "EXPIRED";
-  }
-
-  timerStarted = false;
-
-  alert(
-    "Payment session expired. Please generate payment again."
-  );
-
-}
-
-    }, 1000);
-
-  });
-
-}
-
-
-// ==========================
-// SHOW WA BUTTON
-// ==========================
-
-if (paidConfirm && waSection) {
-
-  paidConfirm.addEventListener("change", () => {
-
-    waSection.style.display =
-      paidConfirm.checked
-        ? "block"
-        : "none";
-
-    const countdown =
-      document.getElementById("countdown");
-
-    if (paidConfirm.checked && countdown) {
-      countdown.innerHTML =
-        "PAYMENT CONFIRMED";
-    }
-
-  });
-
-}
-
-
-// ==========================
 // ORDER FORM
 // ==========================
 
@@ -243,11 +129,6 @@ if (orderForm) {
 
     const alamat =
       document.getElementById("alamat").value;
-
-    const pembayaran =
-      document.querySelector(
-        'input[name="payment"]:checked'
-      )?.value || "Bank Transfer";
 
     const banana =
       parseInt(document.getElementById("qty-banana").value) || 0;
@@ -290,16 +171,10 @@ if (orderForm) {
       return;
     }
 
-    if (!paidConfirm.checked) {
-      alert(
-        "Please confirm payment first."
-      );
-      return;
-    }
 
     const total = hitungTotal();
 
-    const pesan =
+   const pesan =
 `Halo Silvia,
 
 Saya ingin melakukan pemesanan.
@@ -316,14 +191,10 @@ ${alamat}
 Pesanan:
 ${daftarProduk}
 
-Total Pembayaran:
+Estimasi Total:
 Rp ${total.toLocaleString("id-ID")}
 
-Metode Pembayaran:
-${pembayaran}
-
-Saya sudah melakukan pembayaran.
-Mohon konfirmasi pesanan saya.
+Mohon informasi ketersediaan produk, ongkir, dan metode pembayaran.
 
 Terima kasih.`;
 
