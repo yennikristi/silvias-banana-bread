@@ -213,7 +213,7 @@ function trackWhatsApp(){
     event_category: 'Contact',
     event_label: 'WhatsApp'
   });
-
+ }
 }
 
 // ==========================
