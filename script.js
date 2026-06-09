@@ -11,31 +11,26 @@ if (navToggle) {
   });
 }
 
-
 // ==========================
 // CHANGE QUANTITY BUTTON
 // ==========================
 
-function changeQty(id, value){
+function changeQty(id, value) {
+  const input = document.getElementById(id);
 
-  const input =
-    document.getElementById(id);
+  if (!input) return;
 
-  if(!input) return;
-
-  let qty =
-    parseInt(input.value) || 0;
+  let qty = parseInt(input.value) || 0;
 
   qty += value;
 
-  if(qty < 0){
+  if (qty < 0) {
     qty = 0;
   }
 
   input.value = qty;
 
   hitungTotal();
-
 }
 
 // ==========================
@@ -51,7 +46,6 @@ const harga = {
   brownies22: 60000,
   browniescup: 10000
 };
-
 
 // ==========================
 // TOTAL CALCULATION
@@ -100,26 +94,11 @@ function hitungTotal() {
   return total;
 }
 
-
 // ==========================
-// AUTO UPDATE TOTAL
+// INIT TOTAL
 // ==========================
 
-const qtyInputs =
-document.querySelectorAll(
-"#qty-chocochip,#qty-keju,#qty-chocokeju,#qty-almondkeju,#qty-almondchoco,#qty-brownies22,#qty-browniescup"
-);
-
-qtyInputs.forEach(input => {
-
-  input.addEventListener(
-    "input",
-    hitungTotal
-  );
-
-});
-
-if(document.getElementById("totalHarga")){
+if (document.getElementById("totalHarga")) {
   hitungTotal();
 }
 
@@ -127,8 +106,7 @@ if(document.getElementById("totalHarga")){
 // ORDER FORM
 // ==========================
 
-const orderForm =
-  document.getElementById("orderForm");
+const orderForm = document.getElementById("orderForm");
 
 if (orderForm) {
 
@@ -145,73 +123,58 @@ if (orderForm) {
     const alamat =
       document.getElementById("alamat").value;
 
-   const chocochip =
-  parseInt(document.getElementById("qty-chocochip").value) || 0;
+    const chocochip =
+      parseInt(document.getElementById("qty-chocochip").value) || 0;
 
-const keju =
-  parseInt(document.getElementById("qty-keju").value) || 0;
+    const keju =
+      parseInt(document.getElementById("qty-keju").value) || 0;
 
-const chocokeju =
-  parseInt(document.getElementById("qty-chocokeju").value) || 0;
+    const chocokeju =
+      parseInt(document.getElementById("qty-chocokeju").value) || 0;
 
-const almondkeju =
-  parseInt(document.getElementById("qty-almondkeju").value) || 0;
+    const almondkeju =
+      parseInt(document.getElementById("qty-almondkeju").value) || 0;
 
-const almondchoco =
-  parseInt(document.getElementById("qty-almondchoco").value) || 0;
+    const almondchoco =
+      parseInt(document.getElementById("qty-almondchoco").value) || 0;
 
-const brownies22 =
-  parseInt(document.getElementById("qty-brownies22").value) || 0;
+    const brownies22 =
+      parseInt(document.getElementById("qty-brownies22").value) || 0;
 
-const browniescup =
-  parseInt(document.getElementById("qty-browniescup").value) || 0;
+    const browniescup =
+      parseInt(document.getElementById("qty-browniescup").value) || 0;
 
-let daftarProduk = "";
+    let daftarProduk = "";
 
-if (chocochip > 0) {
-  daftarProduk +=
-    `• Banana Bread Chocochip x${chocochip}\n`;
-}
+    if (chocochip > 0)
+      daftarProduk += `• Banana Bread Chocochip x${chocochip}\n`;
 
-if (keju > 0) {
-  daftarProduk +=
-    `• Banana Bread Keju x${keju}\n`;
-}
+    if (keju > 0)
+      daftarProduk += `• Banana Bread Keju x${keju}\n`;
 
-if (chocokeju > 0) {
-  daftarProduk +=
-    `• Banana Bread Chocochip Keju x${chocokeju}\n`;
-}
+    if (chocokeju > 0)
+      daftarProduk += `• Banana Bread Chocochip Keju x${chocokeju}\n`;
 
-if (almondkeju > 0) {
-  daftarProduk +=
-    `• Banana Bread Almond Keju x${almondkeju}\n`;
-}
+    if (almondkeju > 0)
+      daftarProduk += `• Banana Bread Almond Keju x${almondkeju}\n`;
 
-if (almondchoco > 0) {
-  daftarProduk +=
-    `• Banana Bread Almond Chocochip x${almondchoco}\n`;
-}
+    if (almondchoco > 0)
+      daftarProduk += `• Banana Bread Almond Chocochip x${almondchoco}\n`;
 
-if (brownies22 > 0) {
-  daftarProduk +=
-    `• Brownies 22x10 x${brownies22}\n`;
-}
+    if (brownies22 > 0)
+      daftarProduk += `• Brownies 22x10 x${brownies22}\n`;
 
-if (browniescup > 0) {
-  daftarProduk +=
-    `• Brownies Cup x${browniescup}\n`;
-}
+    if (browniescup > 0)
+      daftarProduk += `• Brownies Cup x${browniescup}\n`;
 
     if (daftarProduk === "") {
       alert("Please select at least one product.");
       return;
     }
 
-
     const total = hitungTotal();
 
-   const pesan =
+    const pesan =
 `Halo Silvia,
 
 Saya ingin melakukan pemesanan.
@@ -235,18 +198,15 @@ Mohon informasi ketersediaan produk, ongkir, dan metode pembayaran.
 
 Terima kasih.`;
 
-    const nomorWA =
-      "6282225438899";
+    const nomorWA = "6282225438899";
 
     const url =
       `https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`;
 
     window.open(url, "_blank");
-
   });
 
 }
-
 
 // ==========================
 // SMOOTH SCROLL
@@ -257,9 +217,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener("click", function (e) {
 
     const target =
-      document.querySelector(
-        this.getAttribute("href")
-      );
+      document.querySelector(this.getAttribute("href"));
 
     if (target) {
 
