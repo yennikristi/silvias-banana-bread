@@ -145,17 +145,63 @@ if (orderForm) {
     const alamat =
       document.getElementById("alamat").value;
 
-    const banana =
-      parseInt(document.getElementById("qty-banana").value) || 0;
+   const chocochip =
+  parseInt(document.getElementById("qty-chocochip").value) || 0;
 
-    const choco =
-      parseInt(document.getElementById("qty-choco").value) || 0;
+const keju =
+  parseInt(document.getElementById("qty-keju").value) || 0;
 
-    const brownies =
-      parseInt(document.getElementById("qty-brownies").value) || 0;
+const chocokeju =
+  parseInt(document.getElementById("qty-chocokeju").value) || 0;
 
-    const giftbox =
-      parseInt(document.getElementById("qty-giftbox").value) || 0;
+const almondkeju =
+  parseInt(document.getElementById("qty-almondkeju").value) || 0;
+
+const almondchoco =
+  parseInt(document.getElementById("qty-almondchoco").value) || 0;
+
+const brownies22 =
+  parseInt(document.getElementById("qty-brownies22").value) || 0;
+
+const browniescup =
+  parseInt(document.getElementById("qty-browniescup").value) || 0;
+
+let daftarProduk = "";
+
+if (chocochip > 0) {
+  daftarProduk +=
+    `• Banana Bread Chocochip x${chocochip}\n`;
+}
+
+if (keju > 0) {
+  daftarProduk +=
+    `• Banana Bread Keju x${keju}\n`;
+}
+
+if (chocokeju > 0) {
+  daftarProduk +=
+    `• Banana Bread Chocochip Keju x${chocokeju}\n`;
+}
+
+if (almondkeju > 0) {
+  daftarProduk +=
+    `• Banana Bread Almond Keju x${almondkeju}\n`;
+}
+
+if (almondchoco > 0) {
+  daftarProduk +=
+    `• Banana Bread Almond Chocochip x${almondchoco}\n`;
+}
+
+if (brownies22 > 0) {
+  daftarProduk +=
+    `• Brownies 22x10 x${brownies22}\n`;
+}
+
+if (browniescup > 0) {
+  daftarProduk +=
+    `• Brownies Cup x${browniescup}\n`;
+}
 
     let daftarProduk = "";
 
