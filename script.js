@@ -59,23 +59,35 @@ const harga = {
 
 function hitungTotal() {
 
-  const banana =
-    parseInt(document.getElementById("qty-banana")?.value) || 0;
+  const chocochip =
+    parseInt(document.getElementById("qty-chocochip")?.value) || 0;
 
-  const choco =
-    parseInt(document.getElementById("qty-choco")?.value) || 0;
+  const keju =
+    parseInt(document.getElementById("qty-keju")?.value) || 0;
 
-  const brownies =
-    parseInt(document.getElementById("qty-brownies")?.value) || 0;
+  const chocokeju =
+    parseInt(document.getElementById("qty-chocokeju")?.value) || 0;
 
-  const giftbox =
-    parseInt(document.getElementById("qty-giftbox")?.value) || 0;
+  const almondkeju =
+    parseInt(document.getElementById("qty-almondkeju")?.value) || 0;
+
+  const almondchoco =
+    parseInt(document.getElementById("qty-almondchoco")?.value) || 0;
+
+  const brownies22 =
+    parseInt(document.getElementById("qty-brownies22")?.value) || 0;
+
+  const browniescup =
+    parseInt(document.getElementById("qty-browniescup")?.value) || 0;
 
   const total =
-    (banana * harga.banana) +
-    (choco * harga.choco) +
-    (brownies * harga.brownies) +
-    (giftbox * harga.giftbox);
+    (chocochip * harga.chocochip) +
+    (keju * harga.keju) +
+    (chocokeju * harga.chocokeju) +
+    (almondkeju * harga.almondkeju) +
+    (almondchoco * harga.almondchoco) +
+    (brownies22 * harga.brownies22) +
+    (browniescup * harga.browniescup);
 
   const totalElement =
     document.getElementById("totalHarga");
@@ -95,7 +107,7 @@ function hitungTotal() {
 
 const qtyInputs =
 document.querySelectorAll(
-"#qty-banana,#qty-choco,#qty-brownies,#qty-giftbox"
+"#qty-chocochip,#qty-keju,#qty-chocokeju,#qty-almondkeju,#qty-almondchoco,#qty-brownies22,#qty-browniescup"
 );
 
 qtyInputs.forEach(input => {
