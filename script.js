@@ -206,6 +206,13 @@ Terima kasih.`;
     window.open(url, "_blank");
   });
 
+function trackWhatsApp(){
+
+  gtag('event', 'whatsapp_click', {
+    event_category: 'Contact',
+    event_label: 'WhatsApp'
+  });
+
 }
 
 // ==========================
