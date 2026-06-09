@@ -207,13 +207,17 @@ Terima kasih.`;
   });
 }
 
-function trackWhatsApp(){
+function trackWhatsApp() {
 
-  gtag('event', 'whatsapp_click', {
-    event_category: 'Contact',
-    event_label: 'WhatsApp'
-  });
- }
+  if (typeof gtag === "function") {
+
+    gtag("event", "whatsapp_click", {
+      event_category: "Contact",
+      event_label: "WhatsApp"
+    });
+
+  }
+
 }
 
 // ==========================
