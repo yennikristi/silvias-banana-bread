@@ -205,6 +205,7 @@ Terima kasih.`;
 
     window.open(url, "_blank");
   });
+}
 
 function trackWhatsApp(){
 
