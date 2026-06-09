@@ -43,10 +43,13 @@ function changeQty(id, value){
 // ==========================
 
 const harga = {
-  banana: 65000,
-  choco: 75000,
-  brownies: 55000,
-  giftbox: 125000
+  chocochip: 40000,
+  keju: 45000,
+  chocokeju: 50000,
+  almondkeju: 50000,
+  almondchoco: 50000,
+  brownies22: 60000,
+  browniescup: 10000
 };
 
 
