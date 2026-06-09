@@ -203,32 +203,8 @@ if (browniescup > 0) {
     `• Brownies Cup x${browniescup}\n`;
 }
 
-    let daftarProduk = "";
-
-    if (banana > 0) {
-      daftarProduk +=
-        `• Banana Bread Original x${banana}\n`;
-    }
-
-    if (choco > 0) {
-      daftarProduk +=
-        `• Chocolate Banana Bread x${choco}\n`;
-    }
-
-    if (brownies > 0) {
-      daftarProduk +=
-        `• Chocolate Brownies x${brownies}\n`;
-    }
-
-    if (giftbox > 0) {
-      daftarProduk +=
-        `• Brownies Gift Box x${giftbox}\n`;
-    }
-
     if (daftarProduk === "") {
-      alert(
-        "Please select at least one product."
-      );
+      alert("Please select at least one product.");
       return;
     }
 
